@@ -1,0 +1,18 @@
+{% extends 'rasp/index.html' %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+<div class="text-center">
+    {% for task in num_authors %}
+        <div>
+            <h1><a href="{{ task.get_absolute_url }}">{{ task.intro_text }}</a></h1>
+                <h2>Работник: {{ task.authors_name }}</h2>
+                <div class="text-success"><h2>Дата добавления:{{ task.pub_date|linebreaksbr }}</h2></div>
+                <div class="text-danger"> <h2>Дата окончания:{{ task.end_date|linebreaksbr }}</h2></div>
+                <hr>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}

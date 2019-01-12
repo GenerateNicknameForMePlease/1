@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <br><br>
+        <h2>Статьи из категории: {{ task.category }}</h2>
+        <hr>
+        <div class="row">
+            {% for cat in task_from_category %}
+
+            <div class="col-sm-8">
+                <h2 class="text-center"> {{ cat.task_text }}</h2>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
